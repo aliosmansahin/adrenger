@@ -1,0 +1,110 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito', sans-serif;
+}
+
+.container {
+    min-height: 100vh;
+    padding-top: 20px;
+    background-color: #868686;
+}
+
+main {
+    width: 100%;
+    max-width: 450px;
+    margin: 0 auto;
+    border: 1px solid black;
+    background-color: #3399ff;
+    border-radius: 5px;
+}
+
+header {
+    width: 100%;
+    height: 75px;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    border-bottom: 1px solid black;
+    text-align: center;
+}
+
+header a {
+    color: white;
+    padding: 5px 10px;
+    text-decoration: none;
+}
+
+header a:hover {
+    text-decoration: underline;
+}
+
+.notelinks ul .sec {
+    width: 100%;
+    height: 40px;
+    font-size: 25px;
+    list-style: none;
+    border-bottom: 1px solid black;
+}
+
+.notelinks ul .sec:last-child {
+    border-bottom: none;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.notelinks ul .sec:hover,
+.notelinks ul .latestupdate:hover {
+    background-color: #0080FF;
+}
+
+.notelinks ul .sec a,
+.notelinks ul .latestupdate a {
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.notelinks ul .latestupdate {
+    font-size: 25px;
+    list-style: none;
+    border-bottom: 1px solid black;
+}
+
+.notelinks ul .latestupdate a {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 5px;
+}
+
+.notelinks ul .latestupdate a div {
+    border: 1px solid black;
+    width: 100%;
+    border-radius: 5px;
+    font-size: 15px;
+    padding: 5px;
+}
+
+.notelinks ul .latestupdate a div ul {
+    margin-left: 20px;
+    list-style: disc;
+}
+
+@media(max-width: 450px) {
+    .container {
+        padding: 0;
+    }
+
+    main {
+        border-radius: 0;
+        border: none;
+        border-bottom: 1px solid black;
+    }
+}

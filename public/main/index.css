@@ -1,0 +1,346 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito', sans-serif;
+}
+
+.button {
+    background-color: white;
+    border: none;
+    border-radius: 3px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: #000099;
+    transition: transform 0.05s linear;
+}
+
+.button:hover {
+    background-color: #000099;
+    color: white;
+    cursor: pointer;
+}
+
+.button:active {
+    transform: scale(90%);
+}
+
+.input {
+    background-color: #80C0FF;
+    border: none;
+    outline: none;
+    border-radius: 3px;
+    transition: transform 0.05s linear;
+}
+
+.input::placeholder {
+    color: black;
+}
+
+.input:hover::placeholder,
+.input:focus::placeholder {
+    color: white;
+}
+
+.input:hover,
+.input:focus {
+    background-color: #6495C7;
+    color: white;
+}
+
+.input:active {
+    transform: scale(90%);
+}
+
+.container {
+    background-color: #868686;
+    min-height: 100vh;
+    padding-top: 20px;
+}
+
+.mainbox {
+    margin: 0 auto;
+    background-color: #3399ff;
+    border-radius: 5px;
+    width: 100%;
+    max-width: 500px;
+    border: 1px solid black;
+}
+
+header {
+    color: white;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid black;
+    align-items: center;
+}
+
+.menubar {
+    height: 55px;
+    padding: 5px;
+    border-bottom: 1px solid black;
+}
+
+.menubar .inside-menubar {
+    width: 100%;
+    height: 100%;
+    padding: 0 5px;
+    display: flex;
+    background-color: #80C0FF;
+}
+
+.menubar .inside-menubar div {
+    width: 50%;
+    height: 100%;
+    display: flex;
+}
+
+.menubar .inside-menubar .title-cont {
+    flex-direction: column;
+    justify-content: center;
+}
+
+.menubar .inside-menubar .title-cont div {
+    width: 100%;
+    height: 50%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.menubar .inside-menubar .menucont {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3px 0;
+}
+
+.menubar .inside-menubar .menucont button {
+    margin: 5px;
+}
+
+.menubar .inside-menubar .menucont button,
+.menubar .inside-menubar .menucont a {
+    width: 50%;
+    height: 100%;
+    font-size: 15px;
+    text-align: center;
+}
+
+.menubar,
+.loading,
+.error,
+.main,
+.users {
+    width: 100%;
+}
+
+.loading,
+.error {
+    text-align: center;
+    color: white;
+    font-size: 20px;
+}
+
+.error {
+    padding: 5px;
+    min-height: 75px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.error a {
+    width: 150px;
+    height: 30px;
+}
+
+.main {
+    padding: 5px;
+    position: relative;
+}
+
+.msg-container {
+    width: 100%;
+    min-height: 400px;
+    max-height: 400px;
+    margin-bottom: 5px;
+    padding: 5px;
+    background-color: #80C0FF;
+    overflow-y: scroll;
+}
+
+.bottom-btn {
+    width: 35px;
+    height: 35px;
+    border-radius: 35px;
+    position: absolute;
+    background-image: url("./assets/scrolldown.png");
+    bottom: 13%;
+    right: 7%;
+}
+
+.infocont {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.infomsg {
+    background-color: #663300;
+    display: inline-block;
+    padding: 5px 10px;
+    font-size: 17px;
+    border-radius: 5px;
+    color: white;
+}
+
+.message {
+    background-color: #ff6666;
+    border-radius: 5px;
+    color: white;
+    margin-bottom: 5px;
+    word-wrap: break-word;
+}
+
+.message-own {
+    background-color: #808080;
+    border-radius: 5px;
+    color: white;
+    margin-bottom: 5px;
+    word-wrap: break-word;
+}
+
+@keyframes msg-anim {
+    from {
+        transform: translateY(10px);
+    }
+    to {
+        transform: translateY(0px);
+    }
+}
+
+.msgcont {
+    width: 100%;
+    background-color: #ff3333;
+    padding: 2px 5px 1px 5px;
+    border-radius: 5px;
+    font-size: 18px;
+}
+
+.msgcont-own {
+    width: 100%;
+    background-color: #606060;
+    padding: 2px 5px 1px 5px;
+    border-radius: 5px;
+    font-size: 18px;
+}
+
+.filecont a {
+    color: white;
+}
+
+.msgnick {
+    padding: 2px 5px 0 5px;
+    width: 100%;
+    font-size: 17px;
+}
+
+.send-container {
+    height: 40px;
+}
+
+.send-container form {
+    height: 100%;
+    display: flex;
+}
+
+.send-container form input {
+    height: 100%;
+    margin-right: 5px;
+    padding: 5px;
+    font-size: 17px;
+}
+
+.send-container form :first-child {
+    width: 60%;
+}
+
+.send-container form #fileinp {
+    width: 60%;
+    background-color: #80C0FF;
+    border-radius: 3px;
+    position: relative;
+}
+
+.send-container form #fileinp:hover {
+    background-color:#6495C7;
+}
+
+.send-container form #fileinp::-webkit-file-upload-button {
+    width: 100px;
+    height: 75%;
+    position: absolute;
+    right: 0;
+}
+
+.send-container form #othbtn {
+    width: 20%;
+}
+
+.send-container form :last-child {
+    width: 20%;
+    margin-right: 0;
+}
+
+.others-container {
+    background-color: white;
+    width: 150px;
+    position: absolute;
+    bottom: 45px;
+    right: 21%;
+    border-radius: 5px;
+    border: 1px solid black;
+}
+
+.others-container button {
+    width: 100%;
+    height: 35px;
+    font-size: 16px;
+}
+
+.users {
+    font-size: 19px;
+    width: 100%;
+    display: flex;
+}
+
+.user {
+    height: 30px;
+    display: flex;
+    align-items: center;
+    background-color: #66b2ff;
+    justify-content: center;
+    margin: 5px;
+}
+
+.user :last-child {
+    border-bottom: none;
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding-top: 0;
+    }
+    .mainbox {
+        border-radius: 0;
+        border: none;
+        border-bottom: 1px solid black;
+    }
+}

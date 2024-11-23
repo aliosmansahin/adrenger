@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menü - Adrenger</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+    <div class="container">
+        <div class="input-box">
+            <header>
+                <h1 class="header-text">Adrenger</h1>
+            </header>
+            <div class="formdiv">
+                <form class="inpform" action="/room" method="get">
+                    <input class="nameinp input" type="text" name="nick" placeholder="NICK" maxlength="15" required/>
+                    <input class="idinp input" type="text" name="roomid" placeholder="ODA İSMİ" maxlength="10" required/>
+                    <input class="enterbtn button" type="submit" value="ODAYA GİR"/>
+                </form>
+            </div>
+            <div class="versiondiv">
+                <span></span>
+                <span><a href="/updatenotes" class="button">Güncelleme Notları</a></span>
+                <span><a href="/creators" class="button">Hazırlayanlar</a></span>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="./index.js"></script>
+</html>

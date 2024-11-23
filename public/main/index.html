@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adrenger</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+    <div class="container">
+        <div class="mainbox">
+            <header>
+                <h1 class="header-text">Adrenger</h1>
+            </header>
+            <div class="loading">Odaya Bağlanıyor</div>
+            <div style="display: none;" class="menubar">
+                <div class="inside-menubar">
+                    <div class="title-cont">
+                        <div class="roomidcont"></div>
+                        <div class="typing-cont"></div>
+                    </div>
+                    <div class="menucont">
+                        <button class="users-btn button">BAĞLI OLANLAR</button>
+                        <a href="/" class="leave-room-a button">ODADAN AYRIL</a>
+                    </div>
+                </div>
+            </div>
+            <div style="display: none;" class="error">Boş Nick veya Oda İsmi ile Bağlanamazsınız<br>
+                <a href="/" class="back-error-a button">GERİ DÖN</a></div>
+            <div style="display: none;" class="main">
+                <div onscroll="ScrollCheck()" touchmove="ScrollCheck()" class="msg-container"></div>
+                <div style="display: none;" class="bottom-btn"></div>
+                <div class="send-container">
+                    <form>
+                        <input type="text" id="msgval" class="input" placeholder="MESAJ" onchange="TypingControl()" onclick="TypingOthControl()" oninput="this.onchange();" autocomplete="off">
+                        <input style="display: none;" type="file" id="fileinp" onchange="ChangeFileInput()">
+                        <input type="button" id="othbtn" class="button" value="DİĞER" onclick="OthersBoxControl()">
+                        <input type="submit" id="sendbtn" class="button" value="GÖNDER">
+                    </form>
+                </div>
+                <div style="display: none;" class="others-container">
+                    <button class="button" onclick="SendFileUnitDisplay()">DOSYA GÖNDER</button>
+                </div>
+            </div>
+            <div style="display: none;" class="users"></div>
+        </div>  
+    </div>
+</body>
+<script src="/socket.io/socket.io.js"></script>
+<script src="./index.js"></script>
+</html>
