@@ -153,6 +153,16 @@ setInterval(() => {
     }
 }, 1000);
 
+/* ADDED IN 2026: This code allows us no to suspend service */
+setInterval(() => {
+    fetch("https://adrenger.onrender.com/").then(res => {
+        if(res.ok) {
+            console.log("Self-ping succeed");
+        }
+    }).catch(err => console.log("Self-ping failed: ", err.message));
+}, 10 * 60 * 1000);
+/* */
+
 io.on("connection", (socket) => {
     socket.emit("WELCOME", 1);
     socket.on("JOINROOM", (roomid, nick) => {
@@ -160,7 +170,7 @@ io.on("connection", (socket) => {
         if(room === undefined) {
             appc.AddRoom(roomid);
             room = appc.rooms.find(room => room.id === roomid);
-            console.log("Room Created " + roomid);
+            console.log("ROOM CREATED " + appc.rooms.length); //CHANGED IN 2026
         }
         room.AddUser(socket, nick);
         room.roomStarted = true;
