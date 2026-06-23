@@ -153,14 +153,17 @@ setInterval(() => {
     }
 }, 1000);
 
-/* ADDED IN 2026: This code allows us no to suspend service */
-setInterval(() => {
-    fetch("https://adrenger.onrender.com/").then(res => {
-        if(res.ok) {
-            console.log("Self-ping succeed");
-        }
-    }).catch(err => console.log("Self-ping failed: ", err.message));
-}, 10 * 60 * 1000);
+/* ADDED IN 2026: This code allows us not to suspend service */
+const preventSuspend = false;
+if(preventSuspend) {
+    setInterval(() => {
+        fetch("https://adrenger.adrendev.com/").then(res => {
+            if(res.ok) {
+                console.log("Self-ping succeed");
+            }
+        }).catch(err => console.log("Self-ping failed: ", err.message));
+    }, 10 * 60 * 1000);
+}
 /* */
 
 io.on("connection", (socket) => {
